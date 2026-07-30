@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saturis — pool water chemistry, offline</title>
+<meta name="description" content="Exact pool chemical doses from your test readings. Offline, no account, no ads, no subscription.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="icon-512.png">
+<meta property="og:title" content="Saturis — pool water chemistry, offline">
+<meta property="og:description" content="Exact pool chemical doses from your test readings. Offline, no account, no ads, no subscription.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --cyan:#00A9C6; --pool:#5FE3E8; --deep:#0A3A54; --abyss:#062A3D;
+  --ink:#0B1F2A; --harbour:#5B7383; --mist:#F5F8FA; --hair:#DCE5EB;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--mist);color:var(--ink);
+  font:400 17px/1.65 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+a{color:#00798F}
+a:hover{color:var(--cyan)}
+header.site{
+  background:linear-gradient(135deg,#0E4F73 0%,var(--deep) 52%,var(--abyss) 100%);
+  color:#fff;padding:26px 0;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff}
+.brand svg{display:block;flex:0 0 auto}
+.brand .name{
+  font:800 30px/1 'Manrope',-apple-system,'Segoe UI',sans-serif;letter-spacing:-.8px;
+}
+.brand .tag{
+  font-size:11px;letter-spacing:2.6px;color:var(--pool);
+  text-transform:uppercase;font-weight:600;margin-top:4px
+}
+nav.site{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+nav.site a{
+  color:#fff;text-decoration:none;font-size:14px;font-weight:600;
+  padding:7px 13px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06)
+}
+nav.site a:hover,nav.site a[aria-current=page]{background:rgba(95,227,232,.22);border-color:var(--pool)}
+main{padding:40px 0 70px}
+h1{font:800 38px/1.12 'Manrope',sans-serif;letter-spacing:-1.1px;margin:0 0 18px}
+h2{font:700 25px/1.25 'Manrope',sans-serif;letter-spacing:-.5px;margin:44px 0 12px}
+h3{font:700 19px/1.3 'Manrope',sans-serif;margin:32px 0 8px}
+h4{font:600 16px/1.3 'Inter',sans-serif;margin:24px 0 6px}
+p,ul,ol{margin:0 0 16px}
+li{margin:0 0 7px}
+li.check{list-style:none;margin-left:-22px}
+hr{border:0;border-top:1px solid var(--hair);margin:36px 0}
+blockquote{
+  margin:0 0 18px;padding:14px 18px;background:#fff;
+  border-left:4px solid var(--cyan);border-radius:0 12px 12px 0
+}
+code{
+  background:#E8EFF4;padding:2px 6px;border-radius:5px;
+  font:500 .88em/1.4 ui-monospace,SFMono-Regular,Consolas,monospace
+}
+pre{
+  background:var(--abyss);color:#EAF4F9;padding:16px 18px;border-radius:12px;
+  overflow-x:auto;margin:0 0 18px
+}
+pre code{background:none;color:inherit;padding:0}
+.table-wrap{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;background:#fff;border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--hair);font-size:15px;vertical-align:top}
+th{background:#EDF3F7;font-weight:600;font-size:13px;letter-spacing:.3px;text-transform:uppercase;color:var(--harbour)}
+tr:last-child td{border-bottom:0}
+footer.site{
+  border-top:1px solid var(--hair);padding:26px 0 50px;
+  color:var(--harbour);font-size:14px
+}
+footer.site a{color:var(--harbour)}
+.hero{padding:56px 0 12px}
+.hero h1{font-size:46px}
+.lede{font-size:20px;color:var(--harbour);margin-bottom:26px}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:34px}
+.pill{
+  background:#fff;border:1px solid var(--hair);border-radius:999px;
+  padding:7px 14px;font-size:14px;font-weight:500
+}
+.shots{display:flex;gap:16px;overflow-x:auto;padding:6px 0 14px}
+.shots img{
+  width:236px;flex:0 0 auto;border-radius:18px;
+  border:1px solid var(--hair);background:#fff
+}
+@media (max-width:620px){
+  .hero h1{font-size:34px}
+  h1{font-size:30px}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="34" height="34" viewBox="60 60 392 392" aria-hidden="true">
+  <defs>
+    <linearGradient id="d" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#fff"/><stop offset="46%" stop-color="#F2FCFD"/>
+      <stop offset="47%" stop-color="#8FEDF1"/><stop offset="100%" stop-color="#3FD3DC"/>
+    </linearGradient>
+    <mask id="m"><rect width="512" height="512" fill="#fff"/>
+      <rect x="140" y="308" width="232" height="20" rx="10" fill="#000"/></mask>
+  </defs>
+  <g mask="url(#m)"><path d="M256 92 C340 190 372 244 372 300 A116 116 0 0 1 140 300 C140 244 172 190 256 92 Z" fill="url(#d)"/></g>
+  <rect x="96" y="308" width="52" height="20" rx="10" fill="#5FE3E8"/>
+  <rect x="364" y="308" width="52" height="20" rx="10" fill="#5FE3E8"/>
+</svg>
+      <span>
+        <span class="name">Saturis</span>
+        <span class="tag" style="display:block">Pool water chemistry</span>
+      </span>
+    </a>
+    <nav class="site"><a href="index.html" aria-current="page">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="hero">
+  <h1>Know exactly what your pool needs.</h1>
+  <p class="lede">Enter your test readings. Saturis works out the exact amount of the
+  chemical you already own to add, and in what order.</p>
+  <div class="pills">
+    <span class="pill">Works offline</span>
+    <span class="pill">No account</span>
+    <span class="pill">No ads</span>
+    <span class="pill">One-time payment</span>
+    <span class="pill">Litres or gallons</span>
+    <span class="pill">AU, US &amp; UK products</span>
+  </div>
+</div>
+
+<div class="shots">
+  <img src="screenshots/01-dashboard-action.png" alt="Saturis screenshot" loading="lazy">
+  <img src="screenshots/02-dose-plan.png" alt="Saturis screenshot" loading="lazy">
+  <img src="screenshots/05-history.png" alt="Saturis screenshot" loading="lazy">
+  <img src="screenshots/06-tools.png" alt="Saturis screenshot" loading="lazy">
+</div>
+
+<h2>Why the answer is different</h2>
+<p>Most pool apps tell you to hold 1&ndash;3&nbsp;ppm of chlorine no matter what. That advice is
+wrong for most pools, and it is the most common reason a backyard pool goes green while the
+test strip still reads &ldquo;OK&rdquo;.</p>
+<p>Chlorine is only as strong as your stabiliser level allows. Cyanuric acid locks most of the
+chlorine in your water into a reserve that is not sanitising anything, so the level you
+actually need depends on the ratio of the two. At CYA&nbsp;30, three parts per million is
+fine. At CYA&nbsp;90, it is nearly useless.</p>
+<p>Saturis scales your chlorine target to your measured stabiliser &mdash; about 11.5% of CYA
+for a hand-dosed pool, about 5% for a salt-water chlorinator &mdash; and tells you why.</p>
+
+<h2>What it does</h2>
+<ul>
+  <li><strong>Exact doses, in the units of the product you own.</strong> Australian liquid
+  chlorine is 12.5%, US trade chlorine is 10%, household bleach is 8.25%. Saturis knows
+  which one is in your shed.</li>
+  <li><strong>Real pH chemistry.</strong> Pool water is buffered, so the acid you need
+  depends on your alkalinity and your stabiliser. Saturis solves all three together, and
+  warns you what a dose will do to your alkalinity before you pour it.</li>
+  <li><strong>Langelier Saturation Index, in plain English.</strong> Whether your water is
+  quietly dissolving your plaster or laying down scale.</li>
+  <li><strong>The order to add things, and how long to wait.</strong> Acid and chlorine
+  never meet.</li>
+  <li><strong>It tells you when to do nothing.</strong> If the water is balanced, it says
+  so instead of inventing a job.</li>
+  <li><strong>Your whole log, with trends.</strong> See what your water is really doing.</li>
+  <li><strong>Reminders that work with no signal.</strong> Scheduled on your phone.</li>
+</ul>
+
+<h2>Your data stays on your phone</h2>
+<p>There is no account and no server. Saturis has no internet permission at all, so it
+cannot send your data anywhere even by accident. Android&rsquo;s own backup carries your
+history to a new phone through your Google account, and you can export a readable backup
+file or a CSV of your log whenever you like.</p>
+<p>Full detail in the <a href="privacy.html">privacy policy</a>.</p>
+
+<h2>Free, and Pro</h2>
+<p><strong>Free, forever:</strong> exact doses for every parameter, chlorine targets scaled
+to your stabiliser, the saturation index read-out, every safety warning, one pool, no ads.</p>
+<p><strong>Pro, one payment:</strong> unlimited pools and spas, your full history with trend
+charts, reminders for every job, CSV export, custom target ranges, and cost per dose.</p>
+<p>Not a subscription. Nothing safety related is ever behind the paywall.</p>
+
+<h2>Questions?</h2>
+<p><a href="support.html">Read the help page</a>, or email
+<a href="mailto:saturisapp@gmail.com">saturisapp@gmail.com</a>.</p>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    Saturis Software &middot;
+    <a href="mailto:saturisapp@gmail.com">saturisapp@gmail.com</a> &middot;
+    <a href="privacy.html">Privacy</a> &middot;
+    <a href="terms.html">Terms</a>
+    <p style="margin-top:10px">Saturis is a calculator and a logbook, not a substitute for a pool
+    professional. Always follow the label on every product you use.</p>
+  </div>
+</footer>
+</body>
+</html>
