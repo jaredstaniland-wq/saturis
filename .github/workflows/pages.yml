@@ -1,0 +1,54 @@
+name: Deploy site to GitHub Pages
+
+# Publishes the Saturis website, privacy policy, terms and support pages.
+#
+# Google Play will not approve a listing without a publicly reachable privacy
+# policy URL, so this repository exists purely to serve those four pages. The
+# application source lives in a separate private repository.
+#
+# `configure-pages` with `enablement: true` switches GitHub Pages on through the
+# API the first time this runs, so the site goes live without anyone having to
+# find the setting in the repository options.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. Queue rather than cancel, so a run that is already
+# publishing is allowed to finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Configure Pages, enabling it if this is the first run
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload the whole repository as the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # The repository root *is* the site. A .nojekyll file at the root stops
+          # GitHub running the output through Jekyll, which would otherwise ignore
+          # any file or directory beginning with an underscore.
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
