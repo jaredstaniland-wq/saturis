@@ -107,7 +107,7 @@ prohibited by law.
 
 These terms may be updated for a future version of the app. Material changes will be
 noted in the release notes, and the current version always lives at
-https://jaredstaniland-wq.github.io/saturis/terms.html. Continuing to use the app after a change means you accept it.
+https://github.com/jaredstaniland-wq/saturis/blob/main/TERMS.md. Continuing to use the app after a change means you accept it.
 
 ## 11. Termination
 

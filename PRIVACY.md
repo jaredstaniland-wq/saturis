@@ -104,7 +104,7 @@ your phone is the single most effective thing you can do to protect it.
 
 If Saturis ever gains a feature that handles information differently, this policy will
 be updated before that feature ships, and the change will be described in the app's
-release notes. The current version always lives at https://jaredstaniland-wq.github.io/saturis/privacy.html.
+release notes. The current version always lives at https://github.com/jaredstaniland-wq/saturis/blob/main/PRIVACY.md.
 
 If a future version of Saturis were ever to collect or transmit data, that would be
 opt-in, explained clearly in the app, and disclosed here first.
