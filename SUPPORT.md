@@ -97,7 +97,9 @@ them.
 
 ### Where is my data?
 On your phone, in Saturis' own private storage. There is no account and no server, and
-the app has no internet permission at all — it cannot send your information anywhere.
+Saturis makes no network requests of its own, so there is nowhere for your information to
+go. The `INTERNET` permission you may see listed comes from Google Play Billing, which
+handles the Pro purchase and talks to Google, not to us.
 
 ### Will my history survive a new phone?
 Usually, yes. Android's built-in backup includes Saturis' data file in the backup your

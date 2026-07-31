@@ -8,8 +8,9 @@
 Saturis does not collect anything. There is no account, no server, no analytics, and no
 advertising. Everything you enter stays in the app's private storage on your own phone.
 
-The app does not request internet access, so it cannot transmit your information
-anywhere even by accident.
+Saturis itself makes no network requests. It has no server to talk to. The only
+component in the app that uses the internet at all is Google Play Billing, which handles
+the one-time Pro purchase — and that talks to Google, never to us.
 
 ## Who we are
 
@@ -47,7 +48,12 @@ that other apps cannot read.
 | Notifications | To show the maintenance reminders you set up. Requested only at the moment you switch reminders on, and the app works fully without it. |
 | Run at startup | To re-register your reminders after the phone restarts, so a schedule you set does not silently stop working. |
 
-Saturis does not request internet access.
+**About the internet permission.** If you inspect the app's permissions you will see
+`INTERNET` and `ACCESS_NETWORK_STATE` listed. Saturis does not ask for these and does not
+use them. They are added automatically by the Google Play Billing library, which needs
+them to process the Pro purchase. Saturis has no server, sends no analytics, and makes no
+network requests of its own — but we would rather explain why the permission is there
+than have you find it and wonder.
 
 ## Backups
 
